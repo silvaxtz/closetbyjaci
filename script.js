@@ -1,4 +1,5 @@
 const produtos = [
+
     {
         id: 1,
         nome: "Blusa Elegance",
@@ -26,6 +27,7 @@ const produtos = [
         preco: 64.90,
         imagem: "produtos/blusa-4.jpg"
     }
+
 ];
 
 
@@ -33,20 +35,24 @@ let carrinho = [];
 
 
 /* =========================
-   MOSTRAR PRODUTOS
+MOSTRAR PRODUTOS
 ========================= */
 
 function mostrarProdutos() {
 
-    const container = document.getElementById("products");
+    const container =
+        document.getElementById("products");
 
     container.innerHTML = "";
 
+
     produtos.forEach(produto => {
 
-        const card = document.createElement("div");
+        const card =
+            document.createElement("div");
 
         card.className = "product";
+
 
         card.innerHTML = `
 
@@ -68,40 +74,50 @@ function mostrarProdutos() {
 
                 <button
                     class="product-button"
-                    onclick="adicionarCarrinho(${produto.id})"
-                >
+                    onclick="adicionarCarrinho(${produto.id})">
+
                     Adicionar ao carrinho
+
                 </button>
 
             </div>
+
         `;
+
 
         container.appendChild(card);
 
     });
+
 }
 
 
 /* =========================
-   ADICIONAR AO CARRINHO
+ADICIONAR
 ========================= */
 
 function adicionarCarrinho(id) {
 
-    const produto = produtos.find(p => p.id === id);
+    const produto =
+        produtos.find(p => p.id === id);
+
 
     if (!produto) return;
 
+
     carrinho.push(produto);
+
 
     atualizarCarrinho();
 
+
     abrirCarrinho();
+
 }
 
 
 /* =========================
-   REMOVER
+REMOVER
 ========================= */
 
 function removerCarrinho(index) {
@@ -109,36 +125,49 @@ function removerCarrinho(index) {
     carrinho.splice(index, 1);
 
     atualizarCarrinho();
+
 }
 
 
 /* =========================
-   ATUALIZAR CARRINHO
+ATUALIZAR
 ========================= */
 
 function atualizarCarrinho() {
 
-    const container = document.getElementById("cartItems");
-
-    const contador = document.getElementById("cartCount");
-
-    const totalElement = document.getElementById("cartTotal");
+    const container =
+        document.getElementById("cartItems");
 
 
-    contador.textContent = carrinho.length;
+    const contador =
+        document.getElementById("cartCount");
+
+
+    const totalElement =
+        document.getElementById("cartTotal");
+
+
+    contador.textContent =
+        carrinho.length;
 
 
     if (carrinho.length === 0) {
 
         container.innerHTML = `
+
             <p class="empty-cart">
                 Seu carrinho está vazio.
             </p>
+
         `;
 
-        totalElement.textContent = "R$ 0,00";
+
+        totalElement.textContent =
+            "R$ 0,00";
+
 
         return;
+
     }
 
 
@@ -148,149 +177,196 @@ function atualizarCarrinho() {
     let total = 0;
 
 
-    carrinho.forEach((produto, index) => {
+    carrinho.forEach(
+        (produto, index) => {
 
-        total += produto.preco;
-
-
-        const item = document.createElement("div");
-
-        item.className = "cart-item";
+            total += produto.preco;
 
 
-        item.innerHTML = `
-
-            <div class="cart-item-info">
-
-                <h4>
-                    ${produto.nome}
-                </h4>
-
-                <p>
-                    ${formatarPreco(produto.preco)}
-                </p>
-
-            </div>
-
-            <button
-                class="remove-item"
-                onclick="removerCarrinho(${index})"
-            >
-                Remover
-            </button>
-
-        `;
+            const item =
+                document.createElement("div");
 
 
-        container.appendChild(item);
+            item.className =
+                "cart-item";
 
-    });
+
+            item.innerHTML = `
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${produto.nome}
+                    </h4>
+
+                    <p>
+                        ${formatarPreco(produto.preco)}
+                    </p>
+
+                </div>
 
 
-    totalElement.textContent = formatarPreco(total);
+                <button
+                    class="remove-item"
+                    onclick="removerCarrinho(${index})">
+
+                    Remover
+
+                </button>
+
+            `;
+
+
+            container.appendChild(item);
+
+        }
+    );
+
+
+    totalElement.textContent =
+        formatarPreco(total);
+
 }
 
 
 /* =========================
-   ABRIR CARRINHO
+ABRIR
 ========================= */
 
 function abrirCarrinho() {
 
     document
         .getElementById("cart")
-        .classList.add("active");
+        .classList
+        .add("active");
+
 
     document
         .getElementById("cartOverlay")
-        .classList.add("active");
+        .classList
+        .add("active");
+
 }
 
 
 /* =========================
-   FECHAR CARRINHO
+FECHAR
 ========================= */
 
 function fecharCarrinho() {
 
     document
         .getElementById("cart")
-        .classList.remove("active");
+        .classList
+        .remove("active");
+
 
     document
         .getElementById("cartOverlay")
-        .classList.remove("active");
+        .classList
+        .remove("active");
+
 }
 
 
 /* =========================
-   WHATSAPP
+WHATSAPP
 ========================= */
 
 function finalizarWhatsApp() {
 
     if (carrinho.length === 0) {
 
-        alert("Adicione pelo menos uma peça ao carrinho.");
+        alert(
+            "Adicione pelo menos uma peça ao carrinho."
+        );
 
         return;
+
     }
 
 
-    const numero = "5583999999999";
+    /*
+        COLOQUE AQUI O WHATSAPP DA JACI.
+
+        Exemplo:
+
+        5583999999999
+
+        55 = Brasil
+        83 = DDD
+        restante = número
+
+        Não coloque:
+        +
+        espaços
+        parênteses
+        hífen
+    */
+
+    const numero =
+        "5583999999999";
 
 
     let mensagem =
-        "Olá, Jaci! Gostaria de fazer um pedido:%0A%0A";
+        "Olá, Jaci! Gostaria de fazer um pedido:\n\n";
 
 
     let total = 0;
 
 
-    carrinho.forEach((produto, index) => {
+    carrinho.forEach(
+        (produto, index) => {
 
-        total += produto.preco;
+            total += produto.preco;
 
-        mensagem +=
-            `${index + 1}. ${produto.nome} - ${formatarPreco(produto.preco)}%0A`;
 
-    });
+            mensagem +=
+                `${index + 1}. ${produto.nome} - ${formatarPreco(produto.preco)}\n`;
+
+        }
+    );
 
 
     mensagem +=
-        `%0A*Total: ${formatarPreco(total)}*%0A%0A`;
+        `\nTotal: ${formatarPreco(total)}\n\n`;
+
 
     mensagem +=
         "Gostaria de confirmar a disponibilidade das peças. 🤎";
 
 
     const url =
-        `https://wa.me/${numero}?text=${mensagem}`;
+        `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
 
 
-    window.open(url, "_blank");
+    window.open(
+        url,
+        "_blank"
+    );
+
 }
 
 
 /* =========================
-   PREÇO
+FORMATAR PREÇO
 ========================= */
 
 function formatarPreco(valor) {
 
-    return valor.toLocaleString("pt-BR", {
-
-        style: "currency",
-
-        currency: "BRL"
-
-    });
+    return valor.toLocaleString(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    );
 
 }
 
 
 /* =========================
-   INICIAR
+INICIAR
 ========================= */
 
 mostrarProdutos();
