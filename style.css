@@ -5,7 +5,6 @@
     --bege: #E8D8C4;
     --dourado: #D8C29D;
     --texto: #34251D;
-    --branco: #FFFFFF;
 }
 
 * {
@@ -24,24 +23,24 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button {
+button,
+input {
     font-family: inherit;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* =========================
-   HEADER
-========================= */
+
+/* HEADER */
 
 .header {
     width: 100%;
-    background: rgba(247, 243, 236, 0.96);
-    border-bottom: 1px solid rgba(90, 48, 27, 0.12);
+    background: rgba(247, 243, 236, .97);
+
+    border-bottom: 1px solid rgba(90, 48, 27, .12);
 
     position: sticky;
     top: 0;
@@ -52,10 +51,9 @@ button {
 
 .header-container {
     max-width: 1200px;
-    margin: auto;
-
     height: 72px;
 
+    margin: auto;
     padding: 0 28px;
 
     display: flex;
@@ -64,13 +62,11 @@ button {
 }
 
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
 
     display: flex;
     align-items: center;
@@ -78,17 +74,15 @@ button {
 }
 
 .logo img {
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
 
     object-fit: contain;
     display: block;
 }
 
 
-/* =========================
-   MENU
-========================= */
+/* MENU */
 
 .nav {
     display: flex;
@@ -97,12 +91,10 @@ button {
 
 .nav a {
     font-size: 11px;
-
+    letter-spacing: 2px;
     text-transform: uppercase;
 
-    letter-spacing: 2px;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .nav a:hover {
@@ -110,25 +102,22 @@ button {
 }
 
 
-/* =========================
-   CARRINHO
-========================= */
+/* CARRINHO */
 
 .cart-button {
-    width: 39px;
-    height: 39px;
+    width: 36px;
+    height: 36px;
 
     border: 1px solid var(--marrom);
+    border-radius: 50%;
 
     background: transparent;
 
-    border-radius: 50%;
+    color: var(--marrom);
 
     cursor: pointer;
 
     position: relative;
-
-    color: var(--marrom);
 
     display: flex;
     align-items: center;
@@ -138,40 +127,35 @@ button {
 }
 
 .cart-icon {
-    width: 18px;
-    height: 18px;
-
-    display: block;
+    width: 17px;
+    height: 17px;
 }
 
 .cart-count {
     position: absolute;
 
-    top: -5px;
-    right: -5px;
+    top: -4px;
+    right: -4px;
 
-    min-width: 17px;
-    height: 17px;
+    min-width: 16px;
+    height: 16px;
 
     padding: 0 3px;
+
+    border-radius: 50%;
+
+    background: var(--marrom);
+    color: white;
+
+    font-size: 8px;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background: var(--marrom);
-
-    color: white;
-
-    font-size: 9px;
-
-    border-radius: 50%;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero {
     min-height: 650px;
@@ -184,41 +168,36 @@ button {
 
     background:
         radial-gradient(
-            circle at center,
-            rgba(90, 48, 27, 0.06),
+            circle,
+            rgba(90,48,27,.06),
             transparent 60%
         );
 }
 
 .hero-content {
     max-width: 750px;
-
     padding: 40px 25px;
 }
 
 .hero-small {
-    font-size: 11px;
-
-    letter-spacing: 5px;
-
-    color: var(--marrom);
-
     display: block;
 
     margin-bottom: 25px;
+
+    font-size: 11px;
+    letter-spacing: 5px;
+
+    color: var(--marrom);
 }
 
 .hero h1 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
-    font-size:
-        clamp(50px, 8vw, 90px);
+    font-size: clamp(50px, 8vw, 90px);
 
     font-weight: 500;
 
-    line-height: 0.9;
+    line-height: .9;
 
     color: var(--marrom-escuro);
 }
@@ -228,12 +207,11 @@ button {
 }
 
 .hero p {
-    max-width: 500px;
+    max-width: 520px;
 
     margin: 30px auto;
 
     font-size: 14px;
-
     line-height: 1.8;
 
     color: #6b5a4e;
@@ -242,24 +220,20 @@ button {
 .button {
     display: inline-flex;
 
-    align-items: center;
-    justify-content: center;
-
     padding: 15px 35px;
 
     background: var(--marrom);
-
     color: white;
-
-    font-size: 11px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
 
     border: 1px solid var(--marrom);
 
-    transition: 0.3s;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: .3s;
 }
 
 .button:hover {
@@ -267,9 +241,7 @@ button {
 }
 
 
-/* =========================
-   COLEÇÃO
-========================= */
+/* COLEÇÃO */
 
 .collection {
     max-width: 1200px;
@@ -294,9 +266,7 @@ button {
 }
 
 .section-title h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 50px;
 
@@ -312,9 +282,7 @@ button {
 }
 
 
-/* =========================
-   PRODUTOS
-========================= */
+/* PRODUTOS */
 
 .products {
     display: grid;
@@ -330,9 +298,7 @@ button {
 
     overflow: hidden;
 
-    position: relative;
-
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .product:hover {
@@ -346,9 +312,14 @@ button {
 
     object-fit: cover;
 
-    background: var(--bege);
+    background:
+        linear-gradient(
+            135deg,
+            #eee4d8,
+            #d9c8b7
+        );
 
-    display: block;
+    display: flex;
 }
 
 .product-info {
@@ -356,9 +327,7 @@ button {
 }
 
 .product-name {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 25px;
 
@@ -368,9 +337,9 @@ button {
 .product-price {
     margin-top: 7px;
 
-    font-size: 14px;
-
     color: var(--marrom);
+
+    font-size: 14px;
 }
 
 .product-button {
@@ -380,9 +349,9 @@ button {
 
     padding: 12px;
 
-    border: 1px solid var(--marrom);
-
     background: transparent;
+
+    border: 1px solid var(--marrom);
 
     color: var(--marrom);
 
@@ -394,7 +363,7 @@ button {
 
     text-transform: uppercase;
 
-    transition: 0.3s;
+    transition: .3s;
 }
 
 .product-button:hover {
@@ -404,9 +373,7 @@ button {
 }
 
 
-/* =========================
-   SOBRE
-========================= */
+/* SOBRE */
 
 .about {
     background: var(--marrom);
@@ -433,9 +400,7 @@ button {
 }
 
 .about h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 55px;
 
@@ -451,40 +416,36 @@ button {
 }
 
 .about p {
+    max-width: 600px;
+
+    margin: auto;
+
     color: #e8ddd3;
 
     font-size: 14px;
 
     line-height: 1.9;
-
-    max-width: 600px;
-
-    margin: auto;
 }
 
 
-/* =========================
-   INSTAGRAM
-========================= */
+/* INSTAGRAM */
 
 .instagram {
-    text-align: center;
-
     padding: 90px 25px;
+
+    text-align: center;
 }
 
 .instagram span {
+    color: var(--marrom);
+
     font-size: 10px;
 
     letter-spacing: 4px;
-
-    color: var(--marrom);
 }
 
 .instagram h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 50px;
 
@@ -499,28 +460,22 @@ button {
     color: var(--marrom);
 }
 
-.button-outline:hover {
-    color: white;
-}
 
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
-    text-align: center;
-
     padding: 50px 20px;
 
     background: var(--marrom-escuro);
 
     color: white;
+
+    text-align: center;
 }
 
 .footer-logo img {
-    width: 85px;
-    height: 85px;
+    width: 75px;
+    height: 75px;
 
     object-fit: contain;
 
@@ -528,15 +483,13 @@ footer {
 }
 
 footer p {
+    margin-bottom: 25px;
+
     color: var(--bege);
 
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 20px;
-
-    margin-bottom: 25px;
 }
 
 footer small {
@@ -546,60 +499,46 @@ footer small {
 }
 
 
-/* =========================
-   FUNDO DO CARRINHO
-========================= */
+/* CARRINHO */
 
 .cart-overlay {
     position: fixed;
 
     inset: 0;
 
-    background:
-        rgba(0, 0, 0, 0.45);
+    background: rgba(0,0,0,.45);
 
     opacity: 0;
-
     visibility: hidden;
 
-    transition: 0.3s;
+    transition: .3s;
 
     z-index: 200;
 }
 
 .cart-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
-
-
-/* =========================
-   CARRINHO LATERAL
-========================= */
 
 .cart {
     position: fixed;
 
     top: 0;
-
     right: -450px;
 
-    width:
-        min(420px, 90%);
+    width: min(420px, 92%);
 
     height: 100vh;
 
-    background:
-        var(--creme);
+    background: var(--creme);
 
     z-index: 201;
 
     display: flex;
-
     flex-direction: column;
 
-    transition: 0.4s;
+    transition: .4s;
 }
 
 .cart.active {
@@ -607,26 +546,19 @@ footer small {
 }
 
 .cart-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
     padding: 25px;
 
-    border-bottom:
-        1px solid var(--bege);
+    border-bottom: 1px solid var(--bege);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .cart-header h2 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+    font-family: "Cormorant Garamond", serif;
 
     font-size: 30px;
-
-    font-weight: 500;
 }
 
 .cart-header button {
@@ -636,9 +568,9 @@ footer small {
 
     font-size: 32px;
 
-    cursor: pointer;
-
     color: var(--marrom);
+
+    cursor: pointer;
 }
 
 .cart-items {
@@ -650,9 +582,9 @@ footer small {
 }
 
 .empty-cart {
-    text-align: center;
-
     margin-top: 80px;
+
+    text-align: center;
 
     color: #8c7b6d;
 
@@ -660,37 +592,83 @@ footer small {
 }
 
 .cart-item {
+    padding: 16px 0;
+
+    border-bottom: 1px solid var(--bege);
+}
+
+.cart-item-top {
     display: flex;
 
     justify-content: space-between;
 
-    gap: 15px;
-
-    padding: 15px 0;
-
-    border-bottom:
-        1px solid var(--bege);
+    gap: 10px;
 }
 
-.cart-item-info h4 {
-    font-family:
-        "Cormorant Garamond",
-        serif;
+.cart-item-name {
+    font-family: "Cormorant Garamond", serif;
 
-    font-size: 20px;
-
-    font-weight: 500;
+    font-size: 21px;
 }
 
-.cart-item-info p {
-    font-size: 12px;
+.cart-item-details {
+    margin-top: 5px;
 
     color: #76665a;
 
-    margin-top: 4px;
+    font-size: 11px;
+
+    line-height: 1.7;
+}
+
+.cart-item-bottom {
+    margin-top: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.quantity-control {
+    display: flex;
+
+    align-items: center;
+
+    border: 1px solid var(--bege);
+}
+
+.quantity-control button {
+    width: 28px;
+    height: 28px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--marrom);
+
+    cursor: pointer;
+}
+
+.quantity-control span {
+    width: 28px;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+.cart-item-price {
+    color: var(--marrom);
+
+    font-size: 13px;
 }
 
 .remove-item {
+    margin-top: 8px;
+
     border: none;
 
     background: none;
@@ -699,14 +677,13 @@ footer small {
 
     cursor: pointer;
 
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .cart-footer {
     padding: 25px;
 
-    border-top:
-        1px solid var(--bege);
+    border-top: 1px solid var(--bege);
 }
 
 .cart-total {
@@ -728,9 +705,208 @@ footer small {
 
     padding: 16px;
 
+    border: none;
+
     background: var(--marrom);
 
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   MODAL DO PRODUTO
+========================= */
+
+.product-modal-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 300;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.product-modal-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.product-modal {
+    width: min(450px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: var(--creme);
+
+    padding: 30px;
+
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
     border: none;
+
+    background: none;
+
+    color: var(--marrom);
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.modal-product-image {
+    width: 100%;
+
+    height: 280px;
+
+    object-fit: cover;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eee4d8,
+            #d9c8b7
+        );
+
+    margin-bottom: 20px;
+}
+
+.modal-product-name {
+    font-family: "Cormorant Garamond", serif;
+
+    color: var(--marrom-escuro);
+
+    font-size: 32px;
+}
+
+.modal-product-price {
+    margin-top: 5px;
+
+    color: var(--marrom);
+
+    font-size: 15px;
+}
+
+.option-title {
+    margin-top: 24px;
+    margin-bottom: 10px;
+
+    color: var(--marrom-escuro);
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.options {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.option {
+    min-width: 45px;
+
+    padding: 10px 14px;
+
+    border: 1px solid var(--bege);
+
+    background: transparent;
+
+    color: var(--texto);
+
+    cursor: pointer;
+
+    font-size: 11px;
+
+    transition: .2s;
+}
+
+.option.selected {
+    background: var(--marrom);
+
+    border-color: var(--marrom);
+
+    color: white;
+}
+
+.modal-quantity {
+    display: flex;
+
+    align-items: center;
+
+    width: fit-content;
+
+    border: 1px solid var(--bege);
+}
+
+.modal-quantity button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--marrom);
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.modal-quantity span {
+    width: 38px;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+.modal-add {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 15px;
+
+    border: none;
+
+    background: var(--marrom);
 
     color: white;
 
@@ -738,15 +914,13 @@ footer small {
 
     text-transform: uppercase;
 
-    font-size: 10px;
-
     letter-spacing: 1.5px;
+
+    font-size: 10px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -755,9 +929,6 @@ footer small {
 
         padding: 0 18px;
     }
-
-
-    /* LOGO MENOR NO CELULAR */
 
     .logo {
         width: 58px;
@@ -769,15 +940,9 @@ footer small {
         height: 58px;
     }
 
-
-    /* ESCONDE MENU */
-
     .nav {
         display: none;
     }
-
-
-    /* CARRINHO MENOR */
 
     .cart-button {
         width: 36px;
@@ -789,45 +954,17 @@ footer small {
         height: 17px;
     }
 
-    .cart-count {
-        min-width: 16px;
-        height: 16px;
-
-        font-size: 8px;
-
-        top: -4px;
-        right: -4px;
-    }
-
-
-    /* HERO */
-
     .hero {
         min-height: 600px;
     }
 
-    .hero-content {
-        padding: 30px 20px;
-    }
-
-    .hero-small {
-        font-size: 10px;
-
-        letter-spacing: 4px;
-    }
-
     .hero h1 {
         font-size: 57px;
-
-        line-height: 0.91;
     }
 
     .hero p {
         font-size: 13px;
     }
-
-
-    /* COLEÇÃO */
 
     .collection {
         padding: 75px 18px;
@@ -837,12 +974,8 @@ footer small {
         font-size: 42px;
     }
 
-
-    /* PRODUTOS */
-
     .products {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
 
         gap: 12px;
     }
@@ -860,13 +993,10 @@ footer small {
     }
 
     .product-button {
-        font-size: 8px;
-
         padding: 10px 5px;
+
+        font-size: 8px;
     }
-
-
-    /* SOBRE */
 
     .about {
         padding: 80px 25px;
@@ -876,19 +1006,15 @@ footer small {
         font-size: 45px;
     }
 
-
-    /* INSTAGRAM */
-
     .instagram h2 {
         font-size: 40px;
     }
 
-
-    /* FOOTER */
-
-    .footer-logo img {
-        width: 75px;
-        height: 75px;
+    .product-modal {
+        padding: 22px;
     }
 
+    .modal-product-image {
+        height: 220px;
+    }
 }
