@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Closet by Jaci</title>
-    <meta name="description" content="Closet by Jaci — Vestindo a confiança que já é sua.">
+
+    <meta name="description"
+        content="Closet by Jaci — Vestindo a confiança que já é sua.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -19,9 +24,10 @@
 
     <!-- HEADER -->
     <header class="header">
+
         <div class="header-container">
 
-            <a href="#" class="logo">
+            <a href="#inicio" class="logo" aria-label="Closet by Jaci">
                 <img src="logo.png" alt="Closet by Jaci">
             </a>
 
@@ -31,21 +37,62 @@
                 <a href="#sobre">Sobre</a>
             </nav>
 
-            <button class="cart-button" onclick="abrirCarrinho()">
-                <span>🛍</span>
-                <span class="cart-count" id="cartCount">0</span>
+            <!-- CARRINHO -->
+            <button
+                class="cart-button"
+                onclick="abrirCarrinho()"
+                aria-label="Abrir carrinho">
+
+                <svg
+                    class="cart-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+
+                    <path
+                        d="M3 4H5L7.2 15.2C7.4 16.2 8.3 17 9.3 17H17.5C18.4 17 19.2 16.4 19.5 15.5L21 9H6"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+
+                    <circle
+                        cx="9.5"
+                        cy="20"
+                        r="1.2"
+                        fill="currentColor" />
+
+                    <circle
+                        cx="17"
+                        cy="20"
+                        r="1.2"
+                        fill="currentColor" />
+
+                </svg>
+
+                <span
+                    class="cart-count"
+                    id="cartCount">
+                    0
+                </span>
+
             </button>
 
         </div>
+
     </header>
 
 
     <!-- HERO -->
-    <section class="hero" id="inicio">
+    <section
+        class="hero"
+        id="inicio">
 
         <div class="hero-content">
 
-            <span class="hero-small">CLOSET BY JACI</span>
+            <span class="hero-small">
+                CLOSET BY JACI
+            </span>
 
             <h1>
                 Vestindo a confiança
@@ -58,7 +105,9 @@
                 autênticas e que sabem o que querem.
             </p>
 
-            <a href="#colecao" class="button">
+            <a
+                href="#colecao"
+                class="button">
                 Ver coleção
             </a>
 
@@ -68,11 +117,15 @@
 
 
     <!-- COLEÇÃO -->
-    <section class="collection" id="colecao">
+    <section
+        class="collection"
+        id="colecao">
 
         <div class="section-title">
 
-            <span>COLEÇÃO</span>
+            <span>
+                COLEÇÃO
+            </span>
 
             <h2>
                 Escolha suas peças
@@ -85,9 +138,9 @@
         </div>
 
 
-        <div class="products" id="products">
-
-            <!-- PRODUTOS SERÃO INSERIDOS PELO JAVASCRIPT -->
+        <div
+            class="products"
+            id="products">
 
         </div>
 
@@ -95,11 +148,15 @@
 
 
     <!-- SOBRE -->
-    <section class="about" id="sobre">
+    <section
+        class="about"
+        id="sobre">
 
         <div class="about-content">
 
-            <span>ABOUT US</span>
+            <span>
+                SOBRE O CLOSET
+            </span>
 
             <h2>
                 Mais que roupas.
@@ -121,12 +178,20 @@
     <!-- INSTAGRAM -->
     <section class="instagram">
 
-        <span>SIGA NO INSTAGRAM</span>
+        <span>
+            SIGA NO INSTAGRAM
+        </span>
 
-        <h2>@closetbyjaci</h2>
+        <h2>
+            @closetbyjaci
+        </h2>
 
-        <a href="#" class="button button-outline">
+        <a
+            href="#"
+            class="button button-outline">
+
             Visitar Instagram
+
         </a>
 
     </section>
@@ -136,7 +201,11 @@
     <footer>
 
         <div class="footer-logo">
-            <img src="logo.png" alt="Closet by Jaci">
+
+            <img
+                src="logo.png"
+                alt="Closet by Jaci">
+
         </div>
 
         <p>
@@ -144,16 +213,26 @@
         </p>
 
         <small>
-            © 2026 Closet by Jaci. Todos os direitos reservados.
+            © 2026 Closet by Jaci.
+            Todos os direitos reservados.
         </small>
 
     </footer>
 
 
-    <!-- CARRINHO -->
-    <div class="cart-overlay" id="cartOverlay" onclick="fecharCarrinho()"></div>
+    <!-- FUNDO DO CARRINHO -->
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="fecharCarrinho()">
+    </div>
 
-    <aside class="cart" id="cart">
+
+    <!-- CARRINHO -->
+    <aside
+        class="cart"
+        id="cart"
+        aria-label="Carrinho de compras">
 
         <div class="cart-header">
 
@@ -161,11 +240,20 @@
                 Seu pedido
             </h2>
 
-            <button onclick="fecharCarrinho()">×</button>
+            <button
+                onclick="fecharCarrinho()"
+                aria-label="Fechar carrinho">
+
+                ×
+
+            </button>
 
         </div>
 
-        <div class="cart-items" id="cartItems">
+
+        <div
+            class="cart-items"
+            id="cartItems">
 
             <p class="empty-cart">
                 Seu carrinho está vazio.
@@ -173,11 +261,14 @@
 
         </div>
 
+
         <div class="cart-footer">
 
             <div class="cart-total">
 
-                <span>Total</span>
+                <span>
+                    Total
+                </span>
 
                 <strong id="cartTotal">
                     R$ 0,00
@@ -185,8 +276,13 @@
 
             </div>
 
-            <button class="whatsapp-button" onclick="finalizarWhatsApp()">
+
+            <button
+                class="whatsapp-button"
+                onclick="finalizarWhatsApp()">
+
                 Finalizar pelo WhatsApp
+
             </button>
 
         </div>
@@ -197,4 +293,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
